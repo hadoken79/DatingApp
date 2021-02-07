@@ -11,7 +11,7 @@ namespace API.Extensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
         {
-            services.AddScoped<ITokenService, TokenService>();//Scoped lifes throughout the whole http Request and gets destroyed after
+            services.AddScoped<ITokenService, TokenService>();//Scoped lifes throughout the whole http Request and gets destroyed after (Dependency Injection)
             services.AddDbContext<DataContext>(options =>
             {
                 options.UseSqlite(config.GetConnectionString("DefaultConnection"));
